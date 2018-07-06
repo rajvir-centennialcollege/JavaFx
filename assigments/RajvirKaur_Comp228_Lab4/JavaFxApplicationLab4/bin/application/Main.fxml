@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="672.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <GridPane prefHeight="289.0" prefWidth="398.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="155.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="122.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name" />
+            <Label text="Address" GridPane.rowIndex="1" />
+            <Label text="Province" GridPane.rowIndex="2" />
+            <Label text="City" GridPane.rowIndex="3" />
+            <Label text="Postal Code" GridPane.rowIndex="4" />
+            <Label text="Phone Number" GridPane.rowIndex="5" />
+            <Label text="Email" GridPane.rowIndex="6" />
+            <TextField fx:id="_nameText" GridPane.columnIndex="1" />
+            <TextField fx:id="_addText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="_provinceText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="_cityText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="_postalText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="_phNoText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="_email" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <CheckBox mnemonicParsing="false" text="Student Council " GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Volunteer Work" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </CheckBox>
+         </children>
+      </GridPane>
+      <Button fx:id="_submit" layoutX="239.0" layoutY="328.0" mnemonicParsing="false" onAction="#onSubmitDetailsClicked" text="Submit" />
+      <TextArea fx:id="_detailsOfCourse" layoutY="376.0" prefHeight="131.0" prefWidth="579.0" />
+      <VBox layoutX="419.0" prefHeight="278.0" prefWidth="232.0">
+         <children>
+            <FlowPane prefHeight="62.0" prefWidth="220.0">
+               <children>
+                  <RadioButton fx:id="_rdBtnCse" mnemonicParsing="false" onAction="#onCourse" text="Computer Science">
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="_on" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="_rdBtnBus" mnemonicParsing="false" onAction="#onCourse" text="Business" toggleGroup="$_on">
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </FlowPane>
+            <ComboBox fx:id="_courseList" onAction="#list" prefHeight="37.0" prefWidth="236.0" promptText="Select Course" />
+            <ListView fx:id="_courseDetails" prefHeight="120.0" prefWidth="232.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
